@@ -1,0 +1,81 @@
+import org.apache.commons.io.FileUtils
+
+apply plugin: 'java' // adds 'test' task
+
+defaultTasks 'clean', 'test'
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+configurations {
+    antClasspath
+}
+dependencies {
+    antClasspath 'org.apache.ant:ant-junit:1.9.7'
+}
+
+dependencies {
+    compile 'org.seleniumhq.selenium:selenium-java:2.52.0'
+    compile 'org.seleniumhq.selenium:selenium-server:2.52.0'
+    compile 'io.appium:java-client:4.1.2'
+    compile 'org.json:json:20131018'
+    compile 'log4j:log4j:1.2.17'
+    compile 'junit:junit:4.12'
+    compile 'org.apache.commons:commons-io:1.3.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.8.6'
+    compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.8.6'
+    compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.19.3'
+    compile group: 'com.sun.jersey.contribs', name: 'jersey-apache-client', version: '1.19.3'
+    compile group: 'org.apache.ant', name: 'ant-junit', version: '1.9.7'
+    compile 'com.microsoft.appcenter:appium-test-extension:1.0'
+    ant.taskdef(name: 'junitReport', classname: 'org.apache.tools.ant.taskdefs.optional.junit.XMLResultAggregator', classpath: configurations.antClasspath.asPath)
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.apache.commons:commons-io:1.3.2'
+        classpath 'org.apache.ant:ant-junit:1.9.7'
+    }
+}
+
+test {
+    FileUtils.deleteDirectory(new File("Screenshots"));
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
+
+    // set heap size for the test JVM(s)
+    minHeapSize = "128m"
+    maxHeapSize = "512m"
+
+    // listen to events in the test execution lifecycle
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+}
+
+apply plugin: 'maven'
+
+//task createPom {
+//    pom {
+//        project {
+//            groupId 'Stonebridge'
+//            artifactId 'Stonebridge-XUMI-Android-APP-Test-Automation'
+//            version '0.0.1-SNAPSHOT'
+//        }
+//        withXml {
+//            def repositoriesNode = asNode().appendNode('repositories')
+//            def repoNode = repositoriesNode.appendNode('repository')
+//            repoNode.appendNode('id', 'jcenter')
+//            repoNode.appendNode('url', 'https://jcenter.bintray.com/')
+//            def profilesNode = asNode().appendNode('profiles')
+////            profilesNode.append(new XmlParser().parse('https://raw.githubusercontent.com/Microsoft/AppCenter-Test-Appium-Java-Extensions/master/gradleuploadprofilesnippet.xml'))
+//            profilesNode.append(new XmlParser().parse('gradleuploadprofilesnippet.xml'))
+//        }
+//    }.writeTo("pom.xml")
+//}

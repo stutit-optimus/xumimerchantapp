@@ -1,0 +1,68 @@
+{
+  "userDetails": {
+    "firstName": "Test",
+    "lastName": "User",
+    "phoneNumber": "7789907803",
+    "phoneNumberActual": "(778) 990-7803",
+    "invalidPhoneNumber": "9818333265",
+    "invalidPhoneNumberActual": "(981) 833-3265",
+    "invalidEmailAddress": "a.B@ccom",
+    "alphanumericFirstName": "Test123",
+    "alphanumericLastName": "User456"
+  },
+  "userAddress": {
+    "addressLine": "street 1 Block A",
+    "city": "Test City",
+    "zipCode": "78945",
+    "state": "Alaska"
+  },
+  "userCreditCard": {
+    "cardNumber": "4242424242424242",
+    "invalidCardNumber": "424242424242424242",
+    "cvc": "123"
+  },
+  "userName": {
+    "FirstName": "jyo",
+    "LastName": "dom"
+  },
+  "userPhoneNo": {
+    "phoneNo": "9876543219"
+  },
+  "userBusinessName": {
+    "businessName": "test business",
+    "MarketCode": "Caterers"
+  },
+  "BusinessAddress": {
+    "address": "street 7",
+    "city": "city test",
+    "postalCode": "208011"
+  },
+  "BankDetails": {
+    "banktransitNo": "121212",
+    "bankInstitutionNo": "121212",
+    "bankAccountNo": "121212"
+  },
+  "BusinessInformation": {
+    "productOrService": "test product",
+    "yearsInBusiness": "5",
+    "website": "test@gmail.com",
+    "existingMerchantAccount": "test account"
+
+  },
+  "ApplicantInformation": {
+    "applicantPosition":" test position" ,
+    "applicantSin": "111111"
+
+  },
+  "BillingInformation": {
+    "averageTransaction": "112233",
+    "highesttransaction": "223344",
+    "averageAnnualVolume": "121212"
+  },
+  "TerminalId": {
+    "administrationPaymentTerminal":"test terminal"
+  },
+  "CountryCode": {
+    "countryCodeId": "India"
+  }
+}

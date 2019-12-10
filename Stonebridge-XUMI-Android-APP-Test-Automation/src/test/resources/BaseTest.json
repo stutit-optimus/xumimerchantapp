@@ -1,0 +1,29 @@
+{
+  "xumiConfiguration": {
+    "userName": "Admin",
+    "password": "123456"
+  },
+  "phoneConfiguration": {
+    "androidPassword": "1234"
+  },
+  "userDetails": {
+    "firstName": "Test",
+    "lastName": "User",
+    "phoneNumber": "7789907803"
+  },
+  "userAddress": {
+    "addressLine": "street 1 Block A",
+    "city": "Test City",
+    "zipCode": "78945",
+    "state": "Alaska"
+  },
+  "userCreditCard": {
+    "cardNumber": "4242424242424242",
+    "invalidCardNumber": "424242424242424242",
+    "cvc": "123"
+  },
+  "userName": {
+    "Firstname": "jyoti",
+    "LastName": "mishra"
+  }
+}

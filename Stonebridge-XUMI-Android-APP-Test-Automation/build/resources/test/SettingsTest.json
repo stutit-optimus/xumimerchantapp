@@ -1,0 +1,14 @@
+{
+  "userDetails": {
+    "firstName": "Test",
+    "lastName": "User",
+    "phoneNumber": "7789907803",
+    "newFirstName": "Testing"
+  },
+  "userAddress": {
+    "addressLine": "street 1 Block A",
+    "city": "Test City",
+    "zipCode": "78945",
+    "state": "Alaska"
+  }
+}
