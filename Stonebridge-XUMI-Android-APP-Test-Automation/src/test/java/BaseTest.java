@@ -209,7 +209,7 @@ public class BaseTest {
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("noReset", "true");
         try {
-            capabilities.setCapability("deviceName", "Emulator");
+            capabilities.setCapability("deviceName", "Pixel2");
             capabilities.setCapability("app", System.getProperty("user.dir").concat("/").concat(appId));
             capabilities.setCapability("appPackage", "com.stonebridge.xumi.android.xumimerchant.emu");
             capabilities.setCapability("appActivity", "com.stonebridge.xumi.android.xumimerchant.ui.screens.SplashActivity");
